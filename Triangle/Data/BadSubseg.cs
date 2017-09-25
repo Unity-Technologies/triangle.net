@@ -1,11 +1,11 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="BadSubseg.cs" company="">
 // Original Triangle code by Jonathan Richard Shewchuk, http://www.cs.cmu.edu/~quake/triangle.html
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.Data
+namespace UnityEditor.U2D.TriangleNet.Data
 {
     using System;
     using System.Collections.Generic;
@@ -16,7 +16,7 @@ namespace TriangleNet.Data
     /// A queue used to store encroached subsegments.
     /// </summary>
     /// <remarks>
-    /// Each subsegment's vertices are stored so that we can check whether a 
+    /// Each subsegment's vertices are stored so that we can check whether a
     /// subsegment is still the same.
     /// </remarks>
     class BadSubseg

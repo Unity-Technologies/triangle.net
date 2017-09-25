@@ -1,10 +1,10 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="SimpleLog.cs" company="">
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.Log
+namespace UnityEditor.U2D.TriangleNet.Log
 {
     using System;
     using System.Collections.Generic;
@@ -29,9 +29,9 @@ namespace TriangleNet.Log
 
         // Explicit static constructor to tell C# compiler
         // not to mark type as beforefieldinit
-        static SimpleLog() { }
+        static SimpleLog() {}
 
-        private SimpleLog() { }
+        private SimpleLog() {}
 
         public static ILog<SimpleLogItem> Instance
         {

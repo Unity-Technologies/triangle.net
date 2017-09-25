@@ -1,20 +1,20 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="DataReader.cs" company="">
 // Original Triangle code by Jonathan Richard Shewchuk, http://www.cs.cmu.edu/~quake/triangle.html
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.IO
+namespace UnityEditor.U2D.TriangleNet.IO
 {
     using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
     using System.Globalization;
-    using TriangleNet.Data;
-    using TriangleNet.Log;
-    using TriangleNet.Geometry;
+	using UnityEditor.U2D.TriangleNet.Data;
+	using UnityEditor.U2D.TriangleNet.Log;
+	using UnityEditor.U2D.TriangleNet.Geometry;
 
     /// <summary>
     /// The DataReader class provides methods for mesh reconstruction.
@@ -191,7 +191,8 @@ namespace TriangleNet.IO
                             nexttri = vertexarray[aroundvertex][index];
 
                             checktri = nexttri;
-                        } while (checktri.triangle != Mesh.dummytri);
+                        }
+                        while (checktri.triangle != Mesh.dummytri);
                     }
                 }
 

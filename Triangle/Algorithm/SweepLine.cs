@@ -1,20 +1,20 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="SweepLine.cs">
 // Original Triangle code by Jonathan Richard Shewchuk, http://www.cs.cmu.edu/~quake/triangle.html
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.Algorithm
+namespace UnityEditor.U2D.TriangleNet.Algorithm
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using TriangleNet.Data;
-    using TriangleNet.Log;
-    using TriangleNet.Geometry;
-    using TriangleNet.Tools;
+	using UnityEditor.U2D.TriangleNet.Data;
+	using UnityEditor.U2D.TriangleNet.Log;
+	using UnityEditor.U2D.TriangleNet.Geometry;
+	using UnityEditor.U2D.TriangleNet.Tools;
 
     /// <summary>
     /// Builds a delaunay triangulation using the sweepline algorithm.
@@ -151,7 +151,8 @@ namespace TriangleNet.Algorithm
                         eventnum = parent;
                         notdone = eventnum > 0;
                     }
-                } while (notdone);
+                }
+                while (notdone);
             }
             heap[eventnum] = moveevent;
             moveevent.heapposition = eventnum;
@@ -177,7 +178,6 @@ namespace TriangleNet.Algorithm
                 evt.xkey = thisvertex.x;
                 evt.ykey = thisvertex.y;
                 HeapInsert(eventheap, i++, evt);
-                
             }
         }
 
@@ -360,7 +360,7 @@ namespace TriangleNet.Algorithm
         #endregion
 
         SplayNode CircleTopInsert(SplayNode splayroot, Otri newkey,
-                                  Vertex pa, Vertex pb, Vertex pc, double topy)
+            Vertex pa, Vertex pb, Vertex pc, double topy)
         {
             double ccwabc;
             double xac, yac, xbc, ybc;
@@ -450,7 +450,7 @@ namespace TriangleNet.Algorithm
         }
 
         SplayNode FrontLocate(SplayNode splayroot, Otri bottommost, Vertex searchvertex,
-                              ref Otri searchtri, ref bool farright)
+            ref Otri searchtri, ref bool farright)
         {
             bool farrightflag;
 
@@ -517,7 +517,8 @@ namespace TriangleNet.Algorithm
 
                 // Delete the bounding triangle.
                 mesh.TriangleDealloc(deadtriangle.triangle);
-            } while (!dissolveedge.Equal(startghost));
+            }
+            while (!dissolveedge.Equal(startghost));
 
             return hullsize;
         }
@@ -585,14 +586,15 @@ namespace TriangleNet.Algorithm
                 {
                     if (Behavior.Verbose)
                     {
-                        SimpleLog.Instance.Warning("A duplicate vertex appeared and was ignored.", 
+                        SimpleLog.Instance.Warning("A duplicate vertex appeared and was ignored.",
                             "SweepLine.SweepLineDelaunay().1");
                     }
                     secondvertex.type = VertexType.UndeadVertex;
                     mesh.undeads++;
                 }
-            } while ((firstvertex.x == secondvertex.x) &&
-                     (firstvertex.y == secondvertex.y));
+            }
+            while ((firstvertex.x == secondvertex.x) &&
+                   (firstvertex.y == secondvertex.y));
             lefttri.SetOrg(firstvertex);
             lefttri.SetDest(secondvertex);
             righttri.SetOrg(secondvertex);
@@ -641,7 +643,7 @@ namespace TriangleNet.Algorithm
                     {
                         if (Behavior.Verbose)
                         {
-                            SimpleLog.Instance.Warning("A duplicate vertex appeared and was ignored.", 
+                            SimpleLog.Instance.Warning("A duplicate vertex appeared and was ignored.",
                                 "SweepLine.SweepLineDelaunay().2");
                         }
                         nextvertex.type = VertexType.UndeadVertex;
@@ -653,7 +655,7 @@ namespace TriangleNet.Algorithm
                         lastvertex = nextvertex;
 
                         splayroot = FrontLocate(splayroot, bottommost, nextvertex,
-                                                ref searchtri, ref farrightflag);
+                                ref searchtri, ref farrightflag);
                         //
                         bottommost.Copy(ref searchtri);
                         farrightflag = false;
@@ -747,7 +749,7 @@ namespace TriangleNet.Algorithm
         /// </summary>
         /// <remarks>
         /// Only used in the sweepline algorithm.
-        /// 
+        ///
         /// Nodes do not point directly to their parents or children in the heap. Instead, each
         /// node knows its position in the heap, and can look up its parent and children in a
         /// separate array. To distinguish site events from circle events, all circle events are
@@ -763,7 +765,7 @@ namespace TriangleNet.Algorithm
 
         /// <summary>
         /// Introducing a new class which aggregates a sweep event is the easiest way
-        /// to handle the pointer magic of the original code (casting a sweep event 
+        /// to handle the pointer magic of the original code (casting a sweep event
         /// to vertex etc.).
         /// </summary>
         class SweepEventVertex : Vertex
@@ -781,7 +783,7 @@ namespace TriangleNet.Algorithm
         /// </summary>
         /// <remarks>
         /// Only used in the sweepline algorithm.
-        /// 
+        ///
         /// Each node holds an oriented ghost triangle that represents a boundary edge
         /// of the growing triangulation. When a circle event covers two boundary edges
         /// with a triangle, so that they are no longer boundary edges, those edges are

@@ -1,14 +1,14 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="Behavior.cs">
 // Original Triangle code by Jonathan Richard Shewchuk, http://www.cs.cmu.edu/~quake/triangle.html
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet
+namespace UnityEditor.U2D.TriangleNet
 {
     using System;
-    using TriangleNet.Log;
+	using UnityEditor.U2D.TriangleNet.Log;
 
     /// <summary>
     /// Controls the behavior of the meshing software.

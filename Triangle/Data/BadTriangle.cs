@@ -1,11 +1,11 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="BadTriangle.cs" company="">
 // Original Triangle code by Jonathan Richard Shewchuk, http://www.cs.cmu.edu/~quake/triangle.html
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.Data
+namespace UnityEditor.U2D.TriangleNet.Data
 {
     using System;
     using System.Collections.Generic;
@@ -34,6 +34,7 @@ namespace TriangleNet.Data
         {
             ID = OTID++;
         }
+
         public override string ToString()
         {
             return String.Format("B-TID {0}", poortri.triangle.hash);

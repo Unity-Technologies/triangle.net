@@ -1,10 +1,10 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="AdjacencyMatrix.cs" company="">
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.Tools
+namespace UnityEditor.U2D.TriangleNet.Tools
 {
     using System;
     using System.Collections.Generic;
@@ -19,14 +19,11 @@ namespace TriangleNet.Tools
         // Number of nodes in the mesh.
         int node_num;
 
-        // Number of adjacency entries.
-        int adj_num;
-
         // Pointers into the actual adjacency structure adj. Information about row k is
         // stored in entries adj_row(k) through adj_row(k+1)-1 of adj. Size: node_num + 1
         int[] adj_row;
 
-        // The adjacency structure. For each row, it contains the column indices 
+        // The adjacency structure. For each row, it contains the column indices
         // of the nonzero entries. Size: adj_num
         int[] adj;
 
@@ -46,7 +43,6 @@ namespace TriangleNet.Tools
 
             // Set up the adj_row adjacency pointer array.
             this.adj_row = AdjacencyCount(mesh);
-            this.adj_num = adj_row[node_num] - 1;
 
             // Set up the adj adjacency array.
             this.adj = AdjacencySet(mesh, this.adj_row);
@@ -133,7 +129,7 @@ namespace TriangleNet.Tools
                 n2 = tri.vertices[1].id;
                 n3 = tri.vertices[2].id;
 
-                // Add edge (1,2) if this is the first occurrence, that is, if 
+                // Add edge (1,2) if this is the first occurrence, that is, if
                 // the edge (1,2) is on a boundary (nid <= 0) or if this triangle
                 // is the first of the pair in which the edge occurs (tid < nid).
                 neigh_id = tri.neighbors[2].triangle.id;
@@ -223,7 +219,7 @@ namespace TriangleNet.Tools
                 n2 = tri.vertices[1].id;
                 n3 = tri.vertices[2].id;
 
-                // Add edge (1,2) if this is the first occurrence, that is, if 
+                // Add edge (1,2) if this is the first occurrence, that is, if
                 // the edge (1,2) is on a boundary (nid <= 0) or if this triangle
                 // is the first of the pair in which the edge occurs (tid < nid).
                 nid = tri.neighbors[2].triangle.id;
@@ -311,7 +307,7 @@ namespace TriangleNet.Tools
                 key = a[offset + i];
                 ifree = i;
 
-                for (; ; )
+                for (;;)
                 {
                     // Positions 2*IFREE + 1 and 2*IFREE + 2 are the descendants of position
                     // IFREE.  (One or both may not exist because they equal or exceed N.)
@@ -354,10 +350,7 @@ namespace TriangleNet.Tools
                 // pulled out back to the heap.
                 a[offset + ifree] = key;
             }
-
-            return;
         }
-
 
         /// <summary>
         /// ascending sorts an array of integers using heap sort.
@@ -395,8 +388,6 @@ namespace TriangleNet.Tools
                 a[offset] = a[offset + n1 - 1];
                 a[offset + n1 - 1] = temp;
             }
-
-            return;
         }
 
         #endregion

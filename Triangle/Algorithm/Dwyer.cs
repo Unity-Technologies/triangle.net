@@ -1,15 +1,15 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="Dwyer.cs">
 // Original Triangle code by Jonathan Richard Shewchuk, http://www.cs.cmu.edu/~quake/triangle.html
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.Algorithm
+namespace  UnityEditor.U2D.TriangleNet.Algorithm
 {
     using System;
-    using TriangleNet.Data;
-    using TriangleNet.Log;
+	using UnityEditor.U2D.TriangleNet.Data;
+	using UnityEditor.U2D.TriangleNet.Log;
 
     /// <summary>
     /// Builds a delaunay triangulation using the divide-and-conquer algorithm.
@@ -101,16 +101,16 @@ namespace TriangleNet.Algorithm
                     left++;
                 }
                 while ((left <= right) && ((sortarray[left].x < pivotx) ||
-                                             ((sortarray[left].x == pivotx) &&
-                                              (sortarray[left].y < pivoty))));
+                                           ((sortarray[left].x == pivotx) &&
+                                            (sortarray[left].y < pivoty))));
                 // Search for a vertex whose x-coordinate is too small for the right.
                 do
                 {
                     right--;
                 }
                 while ((left <= right) && ((sortarray[right].x > pivotx) ||
-                                             ((sortarray[right].x == pivotx) &&
-                                              (sortarray[right].y > pivoty))));
+                                           ((sortarray[right].x == pivotx) &&
+                                            (sortarray[right].y > pivoty))));
 
                 if (left < right)
                 {
@@ -133,7 +133,7 @@ namespace TriangleNet.Algorithm
         }
 
         /// <summary>
-        /// An order statistic algorithm, almost.  Shuffles an array of vertices so that 
+        /// An order statistic algorithm, almost.  Shuffles an array of vertices so that
         /// the first 'median' vertices occur lexicographically before the remaining vertices.
         /// </summary>
         /// <param name="left"></param>
@@ -181,16 +181,16 @@ namespace TriangleNet.Algorithm
                     left++;
                 }
                 while ((left <= right) && ((sortarray[left][axis] < pivot1) ||
-                                             ((sortarray[left][axis] == pivot1) &&
-                                              (sortarray[left][1 - axis] < pivot2))));
+                                           ((sortarray[left][axis] == pivot1) &&
+                                            (sortarray[left][1 - axis] < pivot2))));
                 // Search for a vertex whose x-coordinate is too small for the right.
                 do
                 {
                     right--;
                 }
                 while ((left <= right) && ((sortarray[right][axis] > pivot1) ||
-                                             ((sortarray[right][axis] == pivot1) &&
-                                              (sortarray[right][1 - axis] > pivot2))));
+                                           ((sortarray[right][axis] == pivot1) &&
+                                            (sortarray[right][1 - axis] > pivot2))));
                 if (left < right)
                 {
                     // Swap the left and right vertices.
@@ -214,7 +214,7 @@ namespace TriangleNet.Algorithm
         }
 
         /// <summary>
-        /// Sorts the vertices as appropriate for the divide-and-conquer algorithm with 
+        /// Sorts the vertices as appropriate for the divide-and-conquer algorithm with
         /// alternating cuts.
         /// </summary>
         /// <param name="left"></param>
@@ -289,7 +289,7 @@ namespace TriangleNet.Algorithm
         /// vertex.
         /// </remarks>
         void MergeHulls(ref Otri farleft, ref Otri innerleft, ref Otri innerright,
-                        ref Otri farright, int axis)
+            ref Otri farright, int axis)
         {
             Otri leftcand = default(Otri), rightcand = default(Otri);
             Otri nextedge = default(Otri);
@@ -380,7 +380,8 @@ namespace TriangleNet.Algorithm
                     innerrightapex = innerright.Apex();
                     changemade = true;
                 }
-            } while (changemade);
+            }
+            while (changemade);
 
             // Find the two candidates to be the next "gear tooth."
             innerleft.Sym(ref leftcand);
@@ -571,7 +572,7 @@ namespace TriangleNet.Algorithm
                     }
                 }
                 if (leftfinished || (!rightfinished &&
-                       (Primitives.InCircle(upperleft, lowerleft, lowerright, upperright) > 0.0)))
+                                     (Primitives.InCircle(upperleft, lowerleft, lowerright, upperright) > 0.0)))
                 {
                     // Knit the triangulations, adding an edge from 'lowerleft'
                     // to 'upperright'.
@@ -616,7 +617,7 @@ namespace TriangleNet.Algorithm
         /// lowest rightmost vertex).
         /// </remarks>
         void DivconqRecurse(int left, int right, int axis,
-                            ref Otri farleft, ref Otri farright)
+            ref Otri farleft, ref Otri farright)
         {
             Otri midtri = default(Otri);
             Otri tri1 = default(Otri);
@@ -817,7 +818,8 @@ namespace TriangleNet.Algorithm
 
                 // Delete the bounding triangle.
                 mesh.TriangleDealloc(deadtriangle.triangle);
-            } while (!dissolveedge.Equal(startghost));
+            }
+            while (!dissolveedge.Equal(startghost));
 
             return hullsize;
         }
@@ -861,7 +863,7 @@ namespace TriangleNet.Algorithm
                     if (Behavior.Verbose)
                     {
                         SimpleLog.Instance.Warning(
-                            String.Format("A duplicate vertex appeared and was ignored (ID {0}).", sortarray[j].hash), 
+                            String.Format("A duplicate vertex appeared and was ignored (ID {0}).", sortarray[j].hash),
                             "DivConquer.DivconqDelaunay()");
                     }
                     sortarray[j].type = VertexType.UndeadVertex;
@@ -889,7 +891,7 @@ namespace TriangleNet.Algorithm
             }
 
             // Form the Delaunay triangulation.
-            DivconqRecurse(0, i-1, 0, ref hullleft, ref hullright);
+            DivconqRecurse(0, i - 1, 0, ref hullleft, ref hullright);
 
             //DebugWriter.Session.Write(mesh);
             //DebugWriter.Session.Finish();

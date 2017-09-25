@@ -1,16 +1,16 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="Statistic.cs">
 // Original Triangle code by Jonathan Richard Shewchuk, http://www.cs.cmu.edu/~quake/triangle.html
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.Tools
+namespace UnityEditor.U2D.TriangleNet.Tools
 {
     using System;
     using System.Text;
-    using TriangleNet.Data;
-    using TriangleNet.Geometry;
+	using UnityEditor.U2D.TriangleNet.Data;
+	using UnityEditor.U2D.TriangleNet.Geometry;
 
     /// <summary>
     /// Gather mesh statistics.
@@ -197,9 +197,10 @@ namespace TriangleNet.Tools
             double[] ratiotable;
 
             aspecttable = new int[16];
-            ratiotable = new double[] { 
-                1.5, 2.0, 2.5, 3.0, 4.0, 6.0, 10.0, 15.0, 25.0, 50.0, 
-                100.0, 300.0, 1000.0, 10000.0, 100000.0, 0.0 };
+            ratiotable = new double[] {
+                1.5, 2.0, 2.5, 3.0, 4.0, 6.0, 10.0, 15.0, 25.0, 50.0,
+                100.0, 300.0, 1000.0, 10000.0, 100000.0, 0.0
+            };
 
 
             Otri tri = default(Otri);
@@ -238,7 +239,7 @@ namespace TriangleNet.Tools
 
                 //triarea = Primitives.CounterClockwise(p[0], p[1], p[2]);
                 triarea = Math.Abs((p[2].x - p[0].x) * (p[1].y - p[0].y) -
-                    (p[1].x - p[0].x) * (p[2].y - p[0].y)) / 2.0;
+                        (p[1].x - p[0].x) * (p[2].y - p[0].y)) / 2.0;
 
                 triminaltitude2 = triarea * triarea / trilongest2;
 
@@ -367,7 +368,7 @@ namespace TriangleNet.Tools
 
                 //triarea = Primitives.CounterClockwise(p[0], p[1], p[2]);
                 triArea = Math.Abs((p[2].X - p[0].X) * (p[1].Y - p[0].Y) -
-                    (p[1].X - p[0].X) * (p[2].Y - p[0].Y));
+                        (p[1].X - p[0].X) * (p[2].Y - p[0].Y));
 
                 if (triArea < minArea)
                 {

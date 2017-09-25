@@ -1,13 +1,13 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="Triangle.cs" company="">
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.IO
+namespace UnityEditor.U2D.TriangleNet.IO
 {
-    using TriangleNet.Data;
-    using TriangleNet.Geometry;
+	using UnityEditor.U2D.TriangleNet.Data;
+	using UnityEditor.U2D.TriangleNet.Geometry;
 
     /// <summary>
     /// Simple triangle class for input.

@@ -1,14 +1,14 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="BadTriQueue.cs">
 // Original Triangle code by Jonathan Richard Shewchuk, http://www.cs.cmu.edu/~quake/triangle.html
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet
+namespace UnityEditor.U2D.TriangleNet
 {
     using System.Collections.Generic;
-    using TriangleNet.Data;
+	using UnityEditor.U2D.TriangleNet.Data;
 
     /// <summary>
     /// A (priority) queue for bad triangles.

@@ -1,15 +1,15 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="QuadTree.cs" company="">
 // Original code by Frank Dockhorn, http://sourceforge.net/projects/quadtreesim/
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.Tools
+namespace UnityEditor.U2D.TriangleNet.Tools
 {
     using System.Collections.Generic;
     using System.Linq;
-    using TriangleNet.Geometry;
+	using UnityEditor.U2D.TriangleNet.Geometry;
 
     /// <summary>
     /// A Quadtree implementation optimised for triangles.
@@ -33,7 +33,7 @@ namespace TriangleNet.Tools
         /// The quadtree does not track changes of the mesh. If a mesh is refined or
         /// changed in any other way, a new quadtree has to be built to make the point
         /// location work.
-        /// 
+        ///
         /// A node of the tree will be split, if its level if less than the max depth parameter
         /// AND the number of triangles in the node is greater than the size bound.
         /// </remarks>
@@ -244,7 +244,7 @@ namespace TriangleNet.Tools
 
             if (bitRegions == 0)
             {
-                // we didn't find any intersection so we add this triangle to a point's region		
+                // we didn't find any intersection so we add this triangle to a point's region
                 int region = FindRegion(triangle[0]);
                 regions[region].triangles.Add(index);
             }
@@ -252,8 +252,8 @@ namespace TriangleNet.Tools
 
         void FindTriangleIntersections(Point[] triangle, int index)
         {
-            // PLEASE NOTE:   Handling of component comparison is tightly associated with the implementation 
-            //                of the findRegion() function. That means when the point to be compared equals 
+            // PLEASE NOTE:   Handling of component comparison is tightly associated with the implementation
+            //                of the findRegion() function. That means when the point to be compared equals
             //                the pivot point the triangle must be put at least into region 2.
             // Linear equations are in parametric form.
             //                m_pivot.dx = triangle[0].dx + t * (triangle[1].dx - triangle[0].dx)

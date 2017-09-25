@@ -1,54 +1,54 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="QualityMeasure.cs" company="">
 // Original Matlab code by John Burkardt, Florida State University
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.Tools
+namespace UnityEditor.U2D.TriangleNet.Tools
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using TriangleNet.Geometry;
+	using UnityEditor.U2D.TriangleNet.Geometry;
 
     /// <summary>
     /// Provides mesh quality information.
     /// </summary>
     /// <remarks>
     /// Given a triangle abc with points A (ax, ay), B (bx, by), C (cx, cy).
-    /// 
+    ///
     /// The side lengths are given as
     ///   a = sqrt((cx - bx)^2 + (cy - by)^2) -- side BC opposite of A
     ///   b = sqrt((cx - ax)^2 + (cy - ay)^2) -- side CA opposite of B
     ///   c = sqrt((ax - bx)^2 + (ay - by)^2) -- side AB opposite of C
-    ///   
+    ///
     /// The angles are given as
     ///   ang_a = acos((b^2 + c^2 - a^2)  / (2 * b * c)) -- angle at A
     ///   ang_b = acos((c^2 + a^2 - b^2)  / (2 * c * a)) -- angle at B
     ///   ang_c = acos((a^2 + b^2 - c^2)  / (2 * a * b)) -- angle at C
-    ///   
+    ///
     /// The semiperimeter is given as
     ///   s = (a + b + c) / 2
-    ///   
+    ///
     /// The area is given as
     ///   D = abs(ax * (by - cy) + bx * (cy - ay) + cx * (ay - by)) / 2
     ///     = sqrt(s * (s - a) * (s - b) * (s - c))
-    ///      
+    ///
     /// The inradius is given as
     ///   r = D / s
-    ///   
+    ///
     /// The circumradius is given as
     ///   R = a * b * c / (4 * D)
-    /// 
+    ///
     /// The altitudes are given as
     ///   alt_a = 2 * D / a -- altitude above side a
     ///   alt_b = 2 * D / b -- altitude above side b
     ///   alt_c = 2 * D / c -- altitude above side c
-    /// 
+    ///
     /// The aspect ratio may be given as the ratio of the longest to the
-    /// shortest edge or, more commonly as the ratio of the circumradius 
+    /// shortest edge or, more commonly as the ratio of the circumradius
     /// to twice the inradius
     ///   ar = R / (2 * r)
     ///      = a * b * c / (8 * (s - a) * (s - b) * (s - c))
@@ -227,7 +227,7 @@ namespace TriangleNet.Tools
         ///
         ///   M = ML + 1 + MU
         ///
-        /// where 
+        /// where
         ///
         ///   ML = maximum distance from any diagonal entry to a nonzero
         ///   entry in the same row, but earlier column,

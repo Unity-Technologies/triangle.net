@@ -1,16 +1,16 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="Primitives.cs">
 // Original Triangle code by Jonathan Richard Shewchuk, http://www.cs.cmu.edu/~quake/triangle.html
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet
+namespace UnityEditor.U2D.TriangleNet
 {
     using System;
-    using TriangleNet.Data;
-    using TriangleNet.Geometry;
-    using TriangleNet.Tools;
+	using UnityEditor.U2D.TriangleNet.Data;
+	using UnityEditor.U2D.TriangleNet.Geometry;
+	using UnityEditor.U2D.TriangleNet.Tools;
 
     /// <summary>
     /// Provides some primitives regularly used in computational geometry.
@@ -65,7 +65,8 @@ namespace TriangleNet
                 }
                 every_other = !every_other;
                 check = 1.0 + epsilon;
-            } while ((check != 1.0) && (check != lastcheck));
+            }
+            while ((check != 1.0) && (check != lastcheck));
             splitter += 1.0;
             // Error bounds for orientation and incircle tests.
             //resulterrbound = (3.0 + 8.0 * epsilon) * epsilon;
@@ -78,15 +79,15 @@ namespace TriangleNet
         }
 
         /// <summary>
-        /// Check, if the three points appear in counterclockwise order. The result is 
-        /// also a rough approximation of twice the signed area of the triangle defined 
+        /// Check, if the three points appear in counterclockwise order. The result is
+        /// also a rough approximation of twice the signed area of the triangle defined
         /// by the three points.
         /// </summary>
         /// <param name="pa">Point a.</param>
         /// <param name="pb">Point b.</param>
         /// <param name="pc">Point c.</param>
-        /// <returns>Return a positive value if the points pa, pb, and pc occur in 
-        /// counterclockwise order; a negative value if they occur in clockwise order; 
+        /// <returns>Return a positive value if the points pa, pb, and pc occur in
+        /// counterclockwise order; a negative value if they occur in clockwise order;
         /// and zero if they are collinear.</returns>
         /// <remarks>
         /// Uses exact arithmetic if necessary to ensure a correct answer. The
@@ -154,7 +155,7 @@ namespace TriangleNet
         {
             Statistic.CounterClockwiseCountDecimal++;
 
-            decimal detleft, detright, det, detsum;
+            decimal detleft, detright, det;
 
             detleft = ((decimal)pa.x - (decimal)pc.x) * ((decimal)pb.y - (decimal)pc.y);
             detright = ((decimal)pa.y - (decimal)pc.y) * ((decimal)pb.x - (decimal)pc.x);
@@ -166,10 +167,6 @@ namespace TriangleNet
                 {
                     return det;
                 }
-                else
-                {
-                    detsum = detleft + detright;
-                }
             }
             else if (detleft < 0.0m)
             {
@@ -177,26 +174,22 @@ namespace TriangleNet
                 {
                     return det;
                 }
-                else
-                {
-                    detsum = -detleft - detright;
-                }
             }
 
             return det;
         }
 
         /// <summary>
-        /// Check if the point pd lies inside the circle passing through pa, pb, and pc. The 
-        /// points pa, pb, and pc must be in counterclockwise order, or the sign of the result 
+        /// Check if the point pd lies inside the circle passing through pa, pb, and pc. The
+        /// points pa, pb, and pc must be in counterclockwise order, or the sign of the result
         /// will be reversed.
         /// </summary>
         /// <param name="pa">Point a.</param>
         /// <param name="pb">Point b.</param>
         /// <param name="pc">Point c.</param>
         /// <param name="pd">Point d.</param>
-        /// <returns>Return a positive value if the point pd lies inside the circle passing through 
-        /// pa, pb, and pc; a negative value if it lies outside; and zero if the four points 
+        /// <returns>Return a positive value if the point pd lies inside the circle passing through
+        /// pa, pb, and pc; a negative value if it lies outside; and zero if the four points
         /// are cocircular.</returns>
         /// <remarks>
         /// Uses exact arithmetic if necessary to ensure a correct answer.  The
@@ -247,8 +240,8 @@ namespace TriangleNet
             }
 
             permanent = (Math.Abs(bdxcdy) + Math.Abs(cdxbdy)) * alift
-                      + (Math.Abs(cdxady) + Math.Abs(adxcdy)) * blift
-                      + (Math.Abs(adxbdy) + Math.Abs(bdxady)) * clift;
+                + (Math.Abs(cdxady) + Math.Abs(adxcdy)) * blift
+                + (Math.Abs(adxbdy) + Math.Abs(bdxady)) * clift;
             errbound = iccerrboundA * permanent;
             if ((det > errbound) || (-det > errbound))
             {
@@ -291,19 +284,19 @@ namespace TriangleNet
         }
 
         /// <summary>
-        /// Return a positive value if the point pd is incompatible with the circle 
-        /// or plane passing through pa, pb, and pc (meaning that pd is inside the 
-        /// circle or below the plane); a negative value if it is compatible; and 
-        /// zero if the four points are cocircular/coplanar. The points pa, pb, and 
-        /// pc must be in counterclockwise order, or the sign of the result will be 
+        /// Return a positive value if the point pd is incompatible with the circle
+        /// or plane passing through pa, pb, and pc (meaning that pd is inside the
+        /// circle or below the plane); a negative value if it is compatible; and
+        /// zero if the four points are cocircular/coplanar. The points pa, pb, and
+        /// pc must be in counterclockwise order, or the sign of the result will be
         /// reversed.
         /// </summary>
         /// <param name="pa">Point a.</param>
         /// <param name="pb">Point b.</param>
         /// <param name="pc">Point c.</param>
         /// <param name="pd">Point d.</param>
-        /// <returns>Return a positive value if the point pd lies inside the circle passing through 
-        /// pa, pb, and pc; a negative value if it lies outside; and zero if the four points 
+        /// <returns>Return a positive value if the point pd lies inside the circle passing through
+        /// pa, pb, and pc; a negative value if it lies outside; and zero if the four points
         /// are cocircular.</returns>
         public static double NonRegular(Point pa, Point pb, Point pc, Point pd)
         {
@@ -321,7 +314,7 @@ namespace TriangleNet
         /// <param name="offconstant">Off-center constant.</param>
         /// <returns>Coordinates of the circumcenter (or off-center)</returns>
         public static Point FindCircumcenter(Point torg, Point tdest, Point tapex,
-                              ref double xi, ref double eta, double offconstant)
+            ref double xi, ref double eta, double offconstant)
         {
             double xdo, ydo, xao, yao;
             double dodist, aodist, dadist;
@@ -338,7 +331,7 @@ namespace TriangleNet
             dodist = xdo * xdo + ydo * ydo;
             aodist = xao * xao + yao * yao;
             dadist = (tdest.x - tapex.x) * (tdest.x - tapex.x) +
-                     (tdest.y - tapex.y) * (tdest.y - tapex.y);
+                (tdest.y - tapex.y) * (tdest.y - tapex.y);
 
             if (Behavior.NoExact)
             {
@@ -440,7 +433,7 @@ namespace TriangleNet
         /// shortest edge.
         /// </remarks>
         public static Point FindCircumcenter(Point torg, Point tdest, Point tapex,
-                              ref double xi, ref double eta)
+            ref double xi, ref double eta)
         {
             double xdo, ydo, xao, yao;
             double dodist, aodist;

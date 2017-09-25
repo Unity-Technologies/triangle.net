@@ -1,10 +1,10 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="RegionPointer.cs" company="">
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.Geometry
+namespace UnityEditor.U2D.TriangleNet.Geometry
 {
     using System;
     using System.Collections.Generic;

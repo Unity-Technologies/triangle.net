@@ -1,17 +1,17 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="SimpleSmoother.cs" company="">
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.Smoothing
+namespace UnityEditor.U2D.TriangleNet.Smoothing
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using TriangleNet.Geometry;
-    using TriangleNet.Tools;
+	using UnityEditor.U2D.TriangleNet.Geometry;
+	using UnityEditor.U2D.TriangleNet.Tools;
 
     /// <summary>
     /// Simple mesh smoother implementation.
@@ -39,7 +39,7 @@ namespace TriangleNet.Smoothing
                 Step();
 
                 // Actually, we only want to rebuild, if mesh is no longer
-                // Delaunay. Flipping edges could be the right choice instead 
+                // Delaunay. Flipping edges could be the right choice instead
                 // of re-triangulating...
                 mesh.Triangulate(Rebuild());
             }

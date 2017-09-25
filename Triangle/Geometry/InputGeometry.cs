@@ -1,17 +1,17 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="InputGeometry.cs" company="">
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.Geometry
+namespace UnityEditor.U2D.TriangleNet.Geometry
 {
     using System;
     using System.Collections.Generic;
-    using TriangleNet.Data;
+	using UnityEditor.U2D.TriangleNet.Data;
 
     /// <summary>
-    /// The input geometry which will be triangulated. May represent a 
+    /// The input geometry which will be triangulated. May represent a
     /// pointset or a planar straight line graph.
     /// </summary>
     public class InputGeometry
@@ -35,7 +35,7 @@ namespace TriangleNet.Geometry
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="InputGeometry" /> class. 
+        /// Initializes a new instance of the <see cref="InputGeometry" /> class.
         /// The point list will be initialized with a given capacity.
         /// </summary>
         /// <param name="capacity">Point list capacity.</param>
@@ -80,7 +80,7 @@ namespace TriangleNet.Geometry
         /// </summary>
         public IEnumerable<Point> Points
         {
-            get { return points; }
+            get { return (IEnumerable<Point>)points; }
         }
 
         /// <summary>

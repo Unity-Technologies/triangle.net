@@ -1,10 +1,10 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="ISmoother.cs">
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.Smoothing
+namespace UnityEditor.U2D.TriangleNet.Smoothing
 {
     using System;
     using System.Collections.Generic;

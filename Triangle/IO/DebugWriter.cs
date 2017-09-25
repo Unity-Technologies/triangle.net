@@ -1,35 +1,35 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="DebugWriter.cs" company="">
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.IO
+namespace UnityEditor.U2D.TriangleNet.IO
 {
     using System;
     using System.Globalization;
     using System.IO;
     using System.IO.Compression;
     using System.Text;
-    using TriangleNet.Data;
-    using TriangleNet.Geometry;
+	using UnityEditor.U2D.TriangleNet.Data;
+	using UnityEditor.U2D.TriangleNet.Geometry;
 
     /// <summary>
     /// Writes a the current mesh into a text file.
     /// </summary>
     /// <remarks>
     /// File format:
-    /// 
+    ///
     /// num_nodes
     /// id_1 nx ny mark
     /// ...
     /// id_n nx ny mark
-    /// 
+    ///
     /// num_segs
     /// id_1 p1 p2 mark
     /// ...
     /// id_n p1 p2 mark
-    /// 
+    ///
     /// num_tris
     /// id_1 p1 p2 p3 n1 n2 n3
     /// ...
@@ -52,9 +52,9 @@ namespace TriangleNet.IO
 
         // Explicit static constructor to tell C# compiler
         // not to mark type as beforefieldinit
-        static DebugWriter() { }
+        static DebugWriter() {}
 
-        private DebugWriter() { }
+        private DebugWriter() {}
 
         public static DebugWriter Session
         {

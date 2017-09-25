@@ -1,11 +1,11 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="Osub.cs">
 // Original Triangle code by Jonathan Richard Shewchuk, http://www.cs.cmu.edu/~quake/triangle.html
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.Data
+namespace UnityEditor.U2D.TriangleNet.Data
 {
     using System;
     using System.Collections.Generic;
@@ -59,7 +59,7 @@ namespace TriangleNet.Data
         /// <summary>
         /// Find adjoining subsegment with the same origin. [pivot(ab) -> a*]
         /// </summary>
-        /// <remarks>spivot() finds the other subsegment (from the same segment) 
+        /// <remarks>spivot() finds the other subsegment (from the same segment)
         /// that shares the same origin.
         /// </remarks>
         public void Pivot(ref Osub o2)
@@ -80,7 +80,7 @@ namespace TriangleNet.Data
         /// <summary>
         /// Find next subsegment in sequence. [next(ab) -> b*]
         /// </summary>
-        /// <remarks>snext() finds the next subsegment (from the same segment) in 
+        /// <remarks>snext() finds the next subsegment (from the same segment) in
         /// sequence; one whose origin is the input subsegment's destination.
         /// </remarks>
         public void Next(ref Osub o2)
@@ -165,7 +165,7 @@ namespace TriangleNet.Data
         /// <summary>
         /// Read a boundary marker.
         /// </summary>
-        /// <remarks>Boundary markers are used to hold user-defined tags for 
+        /// <remarks>Boundary markers are used to hold user-defined tags for
         /// setting boundary conditions in finite element solvers.</remarks>
         public int Mark()
         {
@@ -192,7 +192,7 @@ namespace TriangleNet.Data
         /// <summary>
         /// Dissolve a subsegment bond (from one side).
         /// </summary>
-        /// <remarks>Note that the other subsegment will still think it's 
+        /// <remarks>Note that the other subsegment will still think it's
         /// connected to this subsegment.</remarks>
         public void Dissolve()
         {

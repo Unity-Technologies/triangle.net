@@ -1,17 +1,17 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="FileWriter.cs" company="">
 // Original Triangle code by Jonathan Richard Shewchuk, http://www.cs.cmu.edu/~quake/triangle.html
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.IO
+namespace UnityEditor.U2D.TriangleNet.IO
 {
     using System;
     using System.IO;
     using System.Globalization;
-    using TriangleNet.Data;
-    using TriangleNet.Geometry;
+	using UnityEditor.U2D.TriangleNet.Data;
+	using UnityEditor.U2D.TriangleNet.Geometry;
     using System.Collections.Generic;
 
     /// <summary>
@@ -193,8 +193,8 @@ namespace TriangleNet.IO
         /// <param name="mesh">Data source.</param>
         /// <param name="filename">File name.</param>
         /// <param name="writeNodes">Write nodes into this file.</param>
-        /// <remarks>If the nodes should not be written into this file, 
-        /// make sure a .node file was written before, so that the nodes 
+        /// <remarks>If the nodes should not be written into this file,
+        /// make sure a .node file was written before, so that the nodes
         /// are numbered right.</remarks>
         public static void WritePoly(Mesh mesh, string filename, bool writeNodes)
         {
@@ -322,13 +322,13 @@ namespace TriangleNet.IO
                                     else
                                     {
                                         writer.WriteLine("{0} {1} {2} {3}", index, p1.id, p2.id,
-                                                checkmark.seg.boundary);
+                                            checkmark.seg.boundary);
                                     }
                                 }
                                 else
                                 {
                                     writer.WriteLine("{0} {1} {2} {3}", index, p1.id, p2.id,
-                                            trisym.triangle == Mesh.dummytri ? "1" : "0");
+                                        trisym.triangle == Mesh.dummytri ? "1" : "0");
                                 }
                             }
                             else
@@ -349,7 +349,7 @@ namespace TriangleNet.IO
         /// </summary>
         /// <param name="mesh"></param>
         /// <param name="filename"></param>
-        /// <remarks>WARNING: Be sure WriteElements has been called before, 
+        /// <remarks>WARNING: Be sure WriteElements has been called before,
         /// so the elements are numbered right!</remarks>
         public static void WriteNeighbors(Mesh mesh, string filename)
         {
@@ -433,7 +433,7 @@ namespace TriangleNet.IO
                         writer.Write(" 0");
                         // TODO
                         // Interpolate the vertex attributes at the circumcenter.
-                        //writer.Write(" {0}", torg.attribs[i] + xi * (tdes.attribst[i] - torg.attribs[i]) + 
+                        //writer.Write(" {0}", torg.attribs[i] + xi * (tdes.attribst[i] - torg.attribs[i]) +
                         //    eta * (tapex.attribs[i] - torg.attribs[i]));
                     }
                     writer.WriteLine();
@@ -473,8 +473,8 @@ namespace TriangleNet.IO
                                 // -1, and x and y coordinates of a vector representing the
                                 // direction of the ray.
                                 writer.WriteLine("{0} {1} -1 {2} {3}", index, p1,
-                                        (tdest[1] - torg[1]).ToString(nfi),
-                                        (torg[0] - tdest[0]).ToString(nfi));
+                                    (tdest[1] - torg[1]).ToString(nfi),
+                                    (torg[0] - tdest[0]).ToString(nfi));
                             }
                             else
                             {

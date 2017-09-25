@@ -1,16 +1,16 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="EdgeEnumerator.cs" company="">
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.Geometry
+namespace UnityEditor.U2D.TriangleNet.Geometry
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using TriangleNet.Data;
+	using UnityEditor.U2D.TriangleNet.Data;
 
     /// <summary>
     /// Enumerates the edges of a triangulation.

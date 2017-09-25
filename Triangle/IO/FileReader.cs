@@ -1,18 +1,18 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="FileReader.cs" company="">
 // Original Triangle code by Jonathan Richard Shewchuk, http://www.cs.cmu.edu/~quake/triangle.html
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.IO
+namespace UnityEditor.U2D.TriangleNet.IO
 {
     using System;
     using System.IO;
     using System.Globalization;
-    using TriangleNet.Data;
-    using TriangleNet.Log;
-    using TriangleNet.Geometry;
+	using UnityEditor.U2D.TriangleNet.Data;
+	using UnityEditor.U2D.TriangleNet.Log;
+	using UnityEditor.U2D.TriangleNet.Geometry;
     using System.Collections.Generic;
 
     /// <summary>
@@ -36,7 +36,7 @@ namespace TriangleNet.IO
 
             string line = reader.ReadLine().Trim();
 
-            while (String.IsNullOrWhiteSpace(line) || line.StartsWith("#"))
+            while (String.IsNullOrEmpty(line) || line.StartsWith("#"))
             {
                 if (reader.EndOfStream)
                 {
@@ -543,9 +543,9 @@ namespace TriangleNet.IO
 
                     // TODO: startIndex ok?
                     tri = new InputTriangle(
-                        int.Parse(line[1]) - startIndex,
-                        int.Parse(line[2]) - startIndex,
-                        int.Parse(line[3]) - startIndex);
+                            int.Parse(line[1]) - startIndex,
+                            int.Parse(line[2]) - startIndex,
+                            int.Parse(line[3]) - startIndex);
 
                     // Read triangle region
                     if (attributes > 0 && validRegion)

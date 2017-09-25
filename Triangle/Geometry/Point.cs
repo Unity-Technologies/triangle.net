@@ -1,10 +1,10 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="Point.cs" company="">
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.Geometry
+namespace UnityEditor.U2D.TriangleNet.Geometry
 {
     using System;
     using System.Collections.Generic;
@@ -88,7 +88,7 @@ namespace TriangleNet.Geometry
         // Compare "Guidelines for Overriding Equals() and Operator =="
         // http://msdn.microsoft.com/en-us/library/ms173147.aspx
 
-        public static bool operator ==(Point a, Point b)
+        public static bool operator==(Point a, Point b)
         {
             // If both are null, or both are same instance, return true.
             if (Object.ReferenceEquals(a, b))
@@ -105,7 +105,7 @@ namespace TriangleNet.Geometry
             return a.Equals(b);
         }
 
-        public static bool operator !=(Point a, Point b)
+        public static bool operator!=(Point a, Point b)
         {
             return !(a == b);
         }

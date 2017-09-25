@@ -1,17 +1,17 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="CuthillMcKee.cs" company="">
 // Original Matlab code by John Burkardt, Florida State University
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.Tools
+namespace UnityEditor.U2D.TriangleNet.Tools
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using TriangleNet.Log;
+	using UnityEditor.U2D.TriangleNet.Log;
 
     /// <summary>
     /// Applies the Cuthill and McKee renumbering algorithm to reduce the bandwidth of
@@ -58,7 +58,7 @@ namespace TriangleNet.Tools
             if (Behavior.Verbose)
             {
                 SimpleLog.Instance.Info(String.Format("Reverse Cuthill-McKee (Bandwidth: {0} > {1})",
-                    bandwidth1, bandwidth2));
+                        bandwidth1, bandwidth2));
             }
 
             return perm_inv;
@@ -71,7 +71,7 @@ namespace TriangleNet.Tools
         /// <param name="perm_inv">The inverse permutation.</param>
         /// <returns>Bandwidth of the permuted adjacency matrix.</returns>
         /// <remarks>
-        /// The matrix is defined by the adjacency information and a permutation.  
+        /// The matrix is defined by the adjacency information and a permutation.
         /// The routine also computes the bandwidth and the size of the envelope.
         /// </remarks>
         int PermBandwidth(int[] perm, int[] perm_inv)
@@ -159,10 +159,10 @@ namespace TriangleNet.Tools
         /// <summary>
         /// RCM renumbers a connected component by the reverse Cuthill McKee algorithm.
         /// </summary>
-        /// <param name="root">the node that defines the connected component. It is used as the starting 
+        /// <param name="root">the node that defines the connected component. It is used as the starting
         /// point for the RCM ordering.</param>
-        /// <param name="mask">Input/output, int MASK(NODE_NUM), a mask for the nodes. Only those nodes with 
-        /// nonzero input mask values are considered by the routine. The nodes numbered by RCM will have 
+        /// <param name="mask">Input/output, int MASK(NODE_NUM), a mask for the nodes. Only those nodes with
+        /// nonzero input mask values are considered by the routine. The nodes numbered by RCM will have
         /// their mask values set to zero.</param>
         /// <param name="perm">Output, int PERM(NODE_NUM), the RCM ordering.</param>
         /// <param name="iccsze">Output, int ICCSZE, the size of the connected component that has been numbered.</param>
@@ -192,7 +192,7 @@ namespace TriangleNet.Tools
             int lbegin, lnbr, lperm, lvlend;
             int nbr, node;
 
-            /// Workspace, int DEG[NODE_NUM], a temporary vector used to hold 
+            /// Workspace, int DEG[NODE_NUM], a temporary vector used to hold
             /// the degree of the nodes in the section graph specified by mask and root.
             int[] deg = new int[node_num];
 
@@ -274,23 +274,21 @@ namespace TriangleNet.Tools
 
             // We now have the Cuthill-McKee ordering. Reverse it.
             ReverseVector(perm, offset, iccsze);
-
-            return;
         }
 
         /// <summary>
         /// Finds a pseudo-peripheral node.
         /// </summary>
-        /// <param name="root">On input, ROOT is a node in the the component of the graph for 
-        /// which a pseudo-peripheral node is sought. On output, ROOT is the pseudo-peripheral 
+        /// <param name="root">On input, ROOT is a node in the the component of the graph for
+        /// which a pseudo-peripheral node is sought. On output, ROOT is the pseudo-peripheral
         /// node obtained.</param>
-        /// <param name="mask">MASK[NODE_NUM], specifies a section subgraph. Nodes for which MASK 
+        /// <param name="mask">MASK[NODE_NUM], specifies a section subgraph. Nodes for which MASK
         /// is zero are ignored by FNROOT.</param>
-        /// <param name="level_num">Output, int LEVEL_NUM, is the number of levels in the level 
+        /// <param name="level_num">Output, int LEVEL_NUM, is the number of levels in the level
         /// structure rooted at the node ROOT.</param>
-        /// <param name="level_row">Output, int LEVEL_ROW(NODE_NUM+1), the level structure array pair 
+        /// <param name="level_row">Output, int LEVEL_ROW(NODE_NUM+1), the level structure array pair
         /// containing the level structure found.</param>
-        /// <param name="level">Output, int LEVEL(NODE_NUM), the level structure array pair 
+        /// <param name="level">Output, int LEVEL(NODE_NUM), the level structure array pair
         /// containing the level structure found.</param>
         /// <param name="node_num">the number of nodes.</param>
         /// <remarks>
@@ -334,7 +332,7 @@ namespace TriangleNet.Tools
         ///    ACM Transactions on Mathematical Software,
         ///    Volume 2, pages 378-387, 1976.
         /// </remarks>
-        void FindRoot(ref int root, int[] mask, ref int level_num, int[] level_row, 
+        void FindRoot(ref int root, int[] mask, ref int level_num, int[] level_row,
             int[] level, int offset)
         {
             int[] adj_row = matrix.AdjacencyRow;
@@ -367,7 +365,7 @@ namespace TriangleNet.Tools
 
             // Pick any node from the last level that has minimum degree
             // as the starting point to generate a new level set.
-            for (; ; )
+            for (;;)
             {
                 mindeg = iccsze;
 
@@ -418,17 +416,15 @@ namespace TriangleNet.Tools
                     break;
                 }
             }
-
-            return;
         }
 
         /// <summary>
         /// Generates the connected level structure rooted at a given node.
         /// </summary>
         /// <param name="root">the node at which the level structure is to be rooted.</param>
-        /// <param name="mask">MASK[NODE_NUM]. On input, only nodes with nonzero MASK are to be processed. 
+        /// <param name="mask">MASK[NODE_NUM]. On input, only nodes with nonzero MASK are to be processed.
         /// On output, those nodes which were included in the level set have MASK set to 1.</param>
-        /// <param name="level_num">Output, int LEVEL_NUM, the number of levels in the level structure. ROOT is 
+        /// <param name="level_num">Output, int LEVEL_NUM, the number of levels in the level structure. ROOT is
         /// in level 1.  The neighbors of ROOT are in level 2, and so on.</param>
         /// <param name="level_row">Output, int LEVEL_ROW[NODE_NUM+1], the rooted level structure.</param>
         /// <param name="level">Output, int LEVEL[NODE_NUM], the rooted level structure.</param>
@@ -447,7 +443,7 @@ namespace TriangleNet.Tools
         ///    Computer Solution of Large Sparse Positive Definite Systems,
         ///    Prentice Hall, 1981.
         /// </remarks>
-        void GetLevelSet(ref int root, int[] mask, ref int level_num, int[] level_row, 
+        void GetLevelSet(ref int root, int[] mask, ref int level_num, int[] level_row,
             int[] level, int offset)
         {
             int[] adj_row = matrix.AdjacencyRow;
@@ -467,7 +463,7 @@ namespace TriangleNet.Tools
 
             // LBEGIN is the pointer to the beginning of the current level, and
             // LVLEND points to the end of this level.
-            for (; ; )
+            for (;;)
             {
                 lbegin = lvlend + 1;
                 lvlend = iccsze;
@@ -512,8 +508,6 @@ namespace TriangleNet.Tools
             {
                 mask[level[offset + i]] = 1;
             }
-
-            return;
         }
 
         /// <summary>
@@ -523,7 +517,7 @@ namespace TriangleNet.Tools
         /// <param name="mask">MASK[NODE_NUM], is nonzero for those nodes which are to be considered.</param>
         /// <param name="deg">Output, int DEG[NODE_NUM], contains, for each  node in the connected component, its degree.</param>
         /// <param name="iccsze">Output, int ICCSIZE, the number of nodes in the connected component.</param>
-        /// <param name="ls">Output, int LS[NODE_NUM], stores in entries 1 through ICCSIZE the nodes in the 
+        /// <param name="ls">Output, int LS[NODE_NUM], stores in entries 1 through ICCSIZE the nodes in the
         /// connected component, starting with ROOT, and proceeding by levels.</param>
         /// <param name="node_num">the number of nodes.</param>
         /// <remarks>
@@ -598,8 +592,6 @@ namespace TriangleNet.Tools
                 node = ls[offset + i];
                 adj_row[node] = -adj_row[node];
             }
-
-            return;
         }
 
         #endregion
@@ -650,8 +642,6 @@ namespace TriangleNet.Tools
                 a[offset + i] = a[offset + size - 1 - i];
                 a[offset + size - 1 - i] = j;
             }
-
-            return;
         }
 
         #endregion

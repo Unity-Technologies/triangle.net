@@ -1,10 +1,10 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="SimpleLogItem.cs" company="">
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.Log
+namespace UnityEditor.U2D.TriangleNet.Log
 {
     using System;
     using System.Collections.Generic;
@@ -43,7 +43,7 @@ namespace TriangleNet.Log
 
         public SimpleLogItem(LogLevel level, string message)
             : this(level, message, "")
-        { }
+        {}
 
         public SimpleLogItem(LogLevel level, string message, string info)
         {

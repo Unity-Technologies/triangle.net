@@ -1,17 +1,17 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="Voronoi.cs">
 // Original Triangle code by Jonathan Richard Shewchuk, http://www.cs.cmu.edu/~quake/triangle.html
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using TriangleNet.Data;
-using TriangleNet.Geometry;
-
-namespace TriangleNet.Tools
+namespace UnityEditor.U2D.TriangleNet.Tools
 {
+	using System;
+	using System.Collections.Generic;
+	using UnityEditor.U2D.TriangleNet.Data;
+	using UnityEditor.U2D.TriangleNet.Geometry;
+	
     /// <summary>
     /// The Voronoi Diagram is the dual of a pointset triangulation.
     /// </summary>
@@ -229,7 +229,7 @@ namespace TriangleNet.Tools
             // Find the boundary segment id.
             f.SegPivot(ref sub);
             sid = sub.seg.hash;
-            
+
             if (rayPoints.ContainsKey(sid))
             {
                 vpoints.Add(rayPoints[sid]);

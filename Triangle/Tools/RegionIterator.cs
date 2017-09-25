@@ -1,36 +1,34 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="RegionIterator.cs" company="">
 // Original Matlab code by John Burkardt, Florida State University
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.Tools
+namespace UnityEditor.U2D.TriangleNet.Tools
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using TriangleNet.Data;
+	using UnityEditor.U2D.TriangleNet.Data;
 
     /// <summary>
     /// Iterates the region a given triangle belongs to and applies an action
-    /// to each connected trianlge in that region. Default action is to set the 
+    /// to each connected trianlge in that region. Default action is to set the
     /// region id.
     /// </summary>
     public class RegionIterator
     {
-        Mesh mesh;
         List<Triangle> viri;
 
         public RegionIterator(Mesh mesh)
         {
-            this.mesh = mesh;
             this.viri = new List<Triangle>();
         }
 
         /// <summary>
-        /// Spread regional attributes and/or area constraints (from a .poly file) 
+        /// Spread regional attributes and/or area constraints (from a .poly file)
         /// throughout the mesh.
         /// </summary>
         /// <param name="attribute"></param>
@@ -49,8 +47,6 @@ namespace TriangleNet.Tools
             Otri testtri = default(Otri);
             Otri neighbor = default(Otri);
             Osub neighborsubseg = default(Osub);
-
-            Behavior behavior = mesh.behavior;
 
             // Loop through all the infected triangles, spreading the attribute
             // and/or area constraint to their neighbors, then to their neighbors'

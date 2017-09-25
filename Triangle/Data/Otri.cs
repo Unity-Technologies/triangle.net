@@ -1,11 +1,11 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="Otri.cs">
 // Original Triangle code by Jonathan Richard Shewchuk, http://www.cs.cmu.edu/~quake/triangle.html
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.Data
+namespace UnityEditor.U2D.TriangleNet.Data
 {
     using System;
     using System.Collections.Generic;
@@ -49,7 +49,7 @@ namespace TriangleNet.Data
         /// Find the abutting triangle; same edge. [sym(abc) -> ba*]
         /// </summary>
         /// <remarks>
-        /// Note that the edge direction is necessarily reversed, because the handle specified 
+        /// Note that the edge direction is necessarily reversed, because the handle specified
         /// by an oriented triangle is directed counterclockwise around the triangle.
         /// </remarks>
         public void Sym(ref Otri o2)
@@ -73,6 +73,7 @@ namespace TriangleNet.Data
             orient = triangle.neighbors[tmp].orient;
             triangle = triangle.neighbors[tmp].triangle;
         }
+
         // lnext() finds the next edge (counterclockwise) of a triangle.
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace TriangleNet.Data
         /// <summary>
         /// Find the next edge counterclockwise with the same origin. [onext(abc) -> ac*]
         /// </summary>
-        /// <remarks>onext() spins counterclockwise around a vertex; that is, it finds 
+        /// <remarks>onext() spins counterclockwise around a vertex; that is, it finds
         /// the next edge with the same origin in the counterclockwise direction. This
         /// edge is part of a different triangle.
         /// </remarks>
@@ -145,8 +146,8 @@ namespace TriangleNet.Data
         /// <summary>
         /// Find the next edge clockwise with the same origin. [oprev(abc) -> a*b]
         /// </summary>
-        /// <remarks>oprev() spins clockwise around a vertex; that is, it finds the 
-        /// next edge with the same origin in the clockwise direction.  This edge is 
+        /// <remarks>oprev() spins clockwise around a vertex; that is, it finds the
+        /// next edge with the same origin in the clockwise direction.  This edge is
         /// part of a different triangle.
         /// </remarks>
         public void Oprev(ref Otri o2)
@@ -176,7 +177,7 @@ namespace TriangleNet.Data
         /// <summary>
         /// Find the next edge counterclockwise with the same destination. [dnext(abc) -> *ba]
         /// </summary>
-        /// <remarks>dnext() spins counterclockwise around a vertex; that is, it finds 
+        /// <remarks>dnext() spins counterclockwise around a vertex; that is, it finds
         /// the next edge with the same destination in the counterclockwise direction.
         /// This edge is part of a different triangle.
         /// </remarks>
@@ -207,8 +208,8 @@ namespace TriangleNet.Data
         /// <summary>
         /// Find the next edge clockwise with the same destination. [dprev(abc) -> cb*]
         /// </summary>
-        /// <remarks>dprev() spins clockwise around a vertex; that is, it finds the 
-        /// next edge with the same destination in the clockwise direction. This edge 
+        /// <remarks>dprev() spins clockwise around a vertex; that is, it finds the
+        /// next edge with the same destination in the clockwise direction. This edge
         /// is part of a different triangle.
         /// </remarks>
         public void Dprev(ref Otri o2)
@@ -240,8 +241,8 @@ namespace TriangleNet.Data
         /// <summary>
         /// Find the next edge (counterclockwise) of the adjacent triangle. [rnext(abc) -> *a*]
         /// </summary>
-        /// <remarks>rnext() moves one edge counterclockwise about the adjacent 
-        /// triangle. (It's best understood by reading Guibas and Stolfi. It 
+        /// <remarks>rnext() moves one edge counterclockwise about the adjacent
+        /// triangle. (It's best understood by reading Guibas and Stolfi. It
         /// involves changing triangles twice.)
         /// </remarks>
         public void Rnext(ref Otri o2)
@@ -383,10 +384,10 @@ namespace TriangleNet.Data
         }
 
         /// <summary>
-        /// Dissolve a bond (from one side).  
+        /// Dissolve a bond (from one side).
         /// </summary>
-        /// <remarks>Note that the other triangle will still think it's connected to 
-        /// this triangle. Usually, however, the other triangle is being deleted 
+        /// <remarks>Note that the other triangle will still think it's connected to
+        /// this triangle. Usually, however, the other triangle is being deleted
         /// entirely, or bonded to another triangle, so it doesn't matter.
         /// </remarks>
         public void Dissolve()

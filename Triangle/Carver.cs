@@ -1,17 +1,17 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="Carver.cs">
 // Original Triangle code by Jonathan Richard Shewchuk, http://www.cs.cmu.edu/~quake/triangle.html
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet
+namespace UnityEditor.U2D.TriangleNet
 {
-    using TriangleNet.Data;
     using System;
-    using TriangleNet.Geometry;
-    using System.Collections.Generic;
-    using TriangleNet.Tools;
+	using System.Collections.Generic;
+	using UnityEditor.U2D.TriangleNet.Data;
+	using UnityEditor.U2D.TriangleNet.Geometry;
+	using UnityEditor.U2D.TriangleNet.Tools;
 
     /// <summary>
     /// Carves holes into the triangulation.
@@ -28,8 +28,8 @@ namespace TriangleNet
         }
 
         /// <summary>
-        /// Virally infect all of the triangles of the convex hull that are not 
-        /// protected by subsegments. Where there are subsegments, set boundary 
+        /// Virally infect all of the triangles of the convex hull that are not
+        /// protected by subsegments. Where there are subsegments, set boundary
         /// markers as appropriate.
         /// </summary>
         private void InfectHull()
@@ -90,12 +90,12 @@ namespace TriangleNet
                     nexttri.Copy(ref hulltri);
                     hulltri.Oprev(ref nexttri);
                 }
-
-            } while (!hulltri.Equal(starttri));
+            }
+            while (!hulltri.Equal(starttri));
         }
 
         /// <summary>
-        /// Spread the virus from all infected triangles to any neighbors not 
+        /// Spread the virus from all infected triangles to any neighbors not
         /// protected by subsegments. Delete all infected triangles.
         /// </summary>
         /// <remarks>
@@ -293,8 +293,8 @@ namespace TriangleNet
         }
 
         /// <summary>
-        /// Find the holes and infect them. Find the area constraints and infect 
-        /// them. Infect the convex hull. Spread the infection and kill triangles. 
+        /// Find the holes and infect them. Find the area constraints and infect
+        /// them. Infect the convex hull. Spread the infection and kill triangles.
         /// Spread the area constraints.
         /// </summary>
         public void CarveHoles()

@@ -1,17 +1,17 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="BoundedVoronoi.cs" company="">
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet.Tools
+namespace UnityEditor.U2D.TriangleNet.Tools
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using TriangleNet.Data;
-    using TriangleNet.Geometry;
+	using UnityEditor.U2D.TriangleNet.Data;
+	using UnityEditor.U2D.TriangleNet.Geometry;
 
     /// <summary>
     /// The Bounded Voronoi Diagram is the dual of a PSLG triangulation.
@@ -193,7 +193,7 @@ namespace TriangleNet.Tools
 
                             f0.SegPivot(ref sub1);
 
-                            // if f0 is finite and tagged non-blind & the common edge 
+                            // if f0 is finite and tagged non-blind & the common edge
                             // between f and f0 is unconstrained then
                             if (f0.triangle != Mesh.dummytri && !f0.triangle.infected && sub1.seg == Mesh.dummysub)
                             {
@@ -415,7 +415,7 @@ namespace TriangleNet.Tools
 
             if (f_prev.triangle == Mesh.dummytri)
             {
-                // For vertices on the domain boundaray, add the vertex. For 
+                // For vertices on the domain boundaray, add the vertex. For
                 // internal boundaries don't add it.
                 p = new Point(vertex.x, vertex.y);
                 p.id = n + segIndex;
@@ -588,7 +588,7 @@ namespace TriangleNet.Tools
         }
 
         /// <summary>
-        /// Determines the intersection point of the line segment defined by points A and B with the 
+        /// Determines the intersection point of the line segment defined by points A and B with the
         /// line segment defined by points C and D.
         /// </summary>
         /// <param name="seg">The first segment AB.</param>
@@ -616,7 +616,7 @@ namespace TriangleNet.Tools
 
             //  Fail if the segments share an end-point.
             if (Ax == Cx && Ay == Cy || Bx == Cx && By == Cy
-            || Ax == Dx && Ay == Dy || Bx == Dx && By == Dy)
+                || Ax == Dx && Ay == Dy || Bx == Dx && By == Dy)
             {
                 return false;
             }

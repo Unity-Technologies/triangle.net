@@ -1,14 +1,14 @@
-﻿// -----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 // <copyright file="TriangleLocator.cs" company="">
 // Original Triangle code by Jonathan Richard Shewchuk, http://www.cs.cmu.edu/~quake/triangle.html
 // Triangle.NET code by Christian Woltering, http://triangle.codeplex.com/
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace TriangleNet
+namespace UnityEditor.U2D.TriangleNet
 {
-    using TriangleNet.Data;
-    using TriangleNet.Geometry;
+	using UnityEditor.U2D.TriangleNet.Data;
+	using UnityEditor.U2D.TriangleNet.Geometry;
 
     /// <summary>
     /// TODO: Update summary.
@@ -44,7 +44,7 @@ namespace TriangleNet
         /// </summary>
         /// <param name="searchpoint">The point to locate.</param>
         /// <param name="searchtri">The triangle to start the search at.</param>
-        /// <param name="stopatsubsegment"> If 'stopatsubsegment' is set, the search 
+        /// <param name="stopatsubsegment"> If 'stopatsubsegment' is set, the search
         /// will stop if it tries to walk through a subsegment, and will return OUTSIDE.</param>
         /// <returns>Location information.</returns>
         /// <remarks>
@@ -106,7 +106,7 @@ namespace TriangleNet
         /// However, it can still be used to find the circumcenter of a triangle, as
         /// long as the search is begun from the triangle in question.</remarks>
         public LocateResult PreciseLocate(Point searchpoint, ref Otri searchtri,
-                                        bool stopatsubsegment)
+            bool stopatsubsegment)
         {
             Otri backtracktri = default(Otri);
             Osub checkedge = default(Osub);
@@ -142,7 +142,7 @@ namespace TriangleNet
                         // through 'fapex', and determining which side of this line
                         // 'searchpoint' falls on.
                         moveleft = (fapex.x - searchpoint.X) * (fdest.x - forg.x) +
-                                   (fapex.y - searchpoint.Y) * (fdest.y - forg.y) > 0.0;
+                            (fapex.y - searchpoint.Y) * (fdest.y - forg.y) > 0.0;
                     }
                     else
                     {
@@ -259,7 +259,7 @@ namespace TriangleNet
             // point we seek.
             torg = searchtri.Org();
             searchdist = (searchpoint.X - torg.x) * (searchpoint.X - torg.x) +
-                         (searchpoint.Y - torg.y) * (searchpoint.Y - torg.y);
+                (searchpoint.Y - torg.y) * (searchpoint.Y - torg.y);
 
             // If a recently encountered triangle has been recorded and has not been
             // deallocated, test it as a good starting point.
@@ -274,7 +274,7 @@ namespace TriangleNet
                         return LocateResult.OnVertex;
                     }
                     dist = (searchpoint.X - torg.x) * (searchpoint.X - torg.x) +
-                           (searchpoint.Y - torg.y) * (searchpoint.Y - torg.y);
+                        (searchpoint.Y - torg.y) * (searchpoint.Y - torg.y);
                     if (dist < searchdist)
                     {
                         recenttri.Copy(ref searchtri);
@@ -294,7 +294,7 @@ namespace TriangleNet
                 {
                     torg = sampletri.Org();
                     dist = (searchpoint.X - torg.x) * (searchpoint.X - torg.x) +
-                           (searchpoint.Y - torg.y) * (searchpoint.Y - torg.y);
+                        (searchpoint.Y - torg.y) * (searchpoint.Y - torg.y);
                     if (dist < searchdist)
                     {
                         sampletri.Copy(ref searchtri);
