@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace UnityEditor.U2D.TriangleNet.Log
+namespace UnityEditor.Experimental.U2D.Animation.TriangleNet.Log
 {
     using System;
     using System.Collections.Generic;

@@ -4,11 +4,11 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace UnityEditor.U2D.TriangleNet.Geometry
+namespace UnityEditor.Experimental.U2D.Animation.TriangleNet.Geometry
 {
     using System;
     using System.Collections.Generic;
-	using UnityEditor.U2D.TriangleNet.Data;
+	using UnityEditor.Experimental.U2D.Animation.TriangleNet.Data;
 
     /// <summary>
     /// The input geometry which will be triangulated. May represent a

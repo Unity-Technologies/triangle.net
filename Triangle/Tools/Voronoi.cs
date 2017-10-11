@@ -5,12 +5,12 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace UnityEditor.U2D.TriangleNet.Tools
+namespace UnityEditor.Experimental.U2D.Animation.TriangleNet.Tools
 {
 	using System;
 	using System.Collections.Generic;
-	using UnityEditor.U2D.TriangleNet.Data;
-	using UnityEditor.U2D.TriangleNet.Geometry;
+	using UnityEditor.Experimental.U2D.Animation.TriangleNet.Data;
+	using UnityEditor.Experimental.U2D.Animation.TriangleNet.Geometry;
 	
     /// <summary>
     /// The Voronoi Diagram is the dual of a pointset triangulation.

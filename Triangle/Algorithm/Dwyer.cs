@@ -5,11 +5,11 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace  UnityEditor.U2D.TriangleNet.Algorithm
+namespace  UnityEditor.Experimental.U2D.Animation.TriangleNet.Algorithm
 {
     using System;
-	using UnityEditor.U2D.TriangleNet.Data;
-	using UnityEditor.U2D.TriangleNet.Log;
+	using UnityEditor.Experimental.U2D.Animation.TriangleNet.Data;
+	using UnityEditor.Experimental.U2D.Animation.TriangleNet.Log;
 
     /// <summary>
     /// Builds a delaunay triangulation using the divide-and-conquer algorithm.

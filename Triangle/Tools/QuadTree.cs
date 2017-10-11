@@ -5,11 +5,11 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace UnityEditor.U2D.TriangleNet.Tools
+namespace UnityEditor.Experimental.U2D.Animation.TriangleNet.Tools
 {
     using System.Collections.Generic;
     using System.Linq;
-	using UnityEditor.U2D.TriangleNet.Geometry;
+	using UnityEditor.Experimental.U2D.Animation.TriangleNet.Geometry;
 
     /// <summary>
     /// A Quadtree implementation optimised for triangles.

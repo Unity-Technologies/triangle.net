@@ -5,10 +5,10 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace UnityEditor.U2D.TriangleNet
+namespace UnityEditor.Experimental.U2D.Animation.TriangleNet
 {
     using System;
-	using UnityEditor.U2D.TriangleNet.Log;
+	using UnityEditor.Experimental.U2D.Animation.TriangleNet.Log;
 
     /// <summary>
     /// Controls the behavior of the meshing software.

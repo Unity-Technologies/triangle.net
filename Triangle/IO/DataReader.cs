@@ -5,16 +5,16 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace UnityEditor.U2D.TriangleNet.IO
+namespace UnityEditor.Experimental.U2D.Animation.TriangleNet.IO
 {
     using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
     using System.Globalization;
-	using UnityEditor.U2D.TriangleNet.Data;
-	using UnityEditor.U2D.TriangleNet.Log;
-	using UnityEditor.U2D.TriangleNet.Geometry;
+	using UnityEditor.Experimental.U2D.Animation.TriangleNet.Data;
+	using UnityEditor.Experimental.U2D.Animation.TriangleNet.Log;
+	using UnityEditor.Experimental.U2D.Animation.TriangleNet.Geometry;
 
     /// <summary>
     /// The DataReader class provides methods for mesh reconstruction.

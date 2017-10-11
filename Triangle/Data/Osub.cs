@@ -5,7 +5,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace UnityEditor.U2D.TriangleNet.Data
+namespace UnityEditor.Experimental.U2D.Animation.TriangleNet.Data
 {
     using System;
     using System.Collections.Generic;

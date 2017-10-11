@@ -4,13 +4,13 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace UnityEditor.U2D.TriangleNet.Geometry
+namespace UnityEditor.Experimental.U2D.Animation.TriangleNet.Geometry
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-	using UnityEditor.U2D.TriangleNet.Data;
+	using UnityEditor.Experimental.U2D.Animation.TriangleNet.Data;
 
     /// <summary>
     /// Represents a straight line segment in 2D space.

@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace UnityEditor.U2D.TriangleNet.Algorithm
+namespace UnityEditor.Experimental.U2D.Animation.TriangleNet.Algorithm
 {
     using System;
     using System.Collections.Generic;

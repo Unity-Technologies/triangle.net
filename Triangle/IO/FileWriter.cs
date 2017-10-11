@@ -5,13 +5,13 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace UnityEditor.U2D.TriangleNet.IO
+namespace UnityEditor.Experimental.U2D.Animation.TriangleNet.IO
 {
     using System;
     using System.IO;
     using System.Globalization;
-	using UnityEditor.U2D.TriangleNet.Data;
-	using UnityEditor.U2D.TriangleNet.Geometry;
+	using UnityEditor.Experimental.U2D.Animation.TriangleNet.Data;
+	using UnityEditor.Experimental.U2D.Animation.TriangleNet.Geometry;
     using System.Collections.Generic;
 
     /// <summary>

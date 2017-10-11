@@ -5,13 +5,13 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace UnityEditor.U2D.TriangleNet.Tools
+namespace UnityEditor.Experimental.U2D.Animation.TriangleNet.Tools
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-	using UnityEditor.U2D.TriangleNet.Data;
+	using UnityEditor.Experimental.U2D.Animation.TriangleNet.Data;
 
     /// <summary>
     /// Iterates the region a given triangle belongs to and applies an action

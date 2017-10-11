@@ -5,7 +5,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace UnityEditor.U2D.TriangleNet
+namespace UnityEditor.Experimental.U2D.Animation.TriangleNet
 {
     /// <summary>
     /// Implemented triangulation algorithms.

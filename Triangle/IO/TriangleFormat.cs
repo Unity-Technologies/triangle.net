@@ -4,14 +4,14 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace UnityEditor.U2D.TriangleNet.IO
+namespace UnityEditor.Experimental.U2D.Animation.TriangleNet.IO
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
 	using System.IO;
-	using UnityEditor.U2D.TriangleNet.Geometry;
+	using UnityEditor.Experimental.U2D.Animation.TriangleNet.Geometry;
 
     /// <summary>
     /// Implements geometry and mesh file formats of the the original Triangle code.

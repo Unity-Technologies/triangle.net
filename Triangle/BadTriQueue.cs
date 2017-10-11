@@ -5,10 +5,10 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace UnityEditor.U2D.TriangleNet
+namespace UnityEditor.Experimental.U2D.Animation.TriangleNet
 {
     using System.Collections.Generic;
-	using UnityEditor.U2D.TriangleNet.Data;
+	using UnityEditor.Experimental.U2D.Animation.TriangleNet.Data;
 
     /// <summary>
     /// A (priority) queue for bad triangles.

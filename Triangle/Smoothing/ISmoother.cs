@@ -4,7 +4,7 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace UnityEditor.U2D.TriangleNet.Smoothing
+namespace UnityEditor.Experimental.U2D.Animation.TriangleNet.Smoothing
 {
     using System;
     using System.Collections.Generic;

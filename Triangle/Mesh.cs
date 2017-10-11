@@ -5,18 +5,18 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-namespace UnityEditor.U2D.TriangleNet
+namespace UnityEditor.Experimental.U2D.Animation.TriangleNet
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
-	using UnityEditor.U2D.TriangleNet.Data;
-	using UnityEditor.U2D.TriangleNet.Log;
-	using UnityEditor.U2D.TriangleNet.IO;
-	using UnityEditor.U2D.TriangleNet.Algorithm;
-	using UnityEditor.U2D.TriangleNet.Smoothing;
-	using UnityEditor.U2D.TriangleNet.Geometry;
-	using UnityEditor.U2D.TriangleNet.Tools;
+	using UnityEditor.Experimental.U2D.Animation.TriangleNet.Data;
+	using UnityEditor.Experimental.U2D.Animation.TriangleNet.Log;
+	using UnityEditor.Experimental.U2D.Animation.TriangleNet.IO;
+	using UnityEditor.Experimental.U2D.Animation.TriangleNet.Algorithm;
+	using UnityEditor.Experimental.U2D.Animation.TriangleNet.Smoothing;
+	using UnityEditor.Experimental.U2D.Animation.TriangleNet.Geometry;
+	using UnityEditor.Experimental.U2D.Animation.TriangleNet.Tools;
 
     /// <summary>
     /// Mesh data structure.
