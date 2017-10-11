@@ -26,7 +26,7 @@ namespace UnityEditor.U2D.TriangleNet
         NewLocation newLocation;
 
         // Not used at the moment
-        Func<Point, Point, Point, double, bool> userTest;
+        Func<Point, Point, Point, double, bool> userTest = null;
 
         ILog<SimpleLogItem> logger;
 
